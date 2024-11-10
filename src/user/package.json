@@ -1,0 +1,32 @@
+{
+  "name": "ci-cd-pipeline",
+  "version": "1.0.0",
+  "description": "It's a simulation of CI/CD pipeline under microservices &amp; Nginx project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "prod":""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminChieng0903/CI-CD-pipeline.git"
+  },
+  "author": "Benjamin Qian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenjaminChieng0903/CI-CD-pipeline/issues"
+  },
+  "homepage": "https://github.com/BenjaminChieng0903/CI-CD-pipeline#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  }
+}
