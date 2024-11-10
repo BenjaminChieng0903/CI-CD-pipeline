@@ -2,7 +2,7 @@
 import express,{Request, Response, NextFunction} from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-
+import routes from './app/routes/routes'
 dotenv.config();
 
 const app = express();
@@ -15,8 +15,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use(cors());
 
 //user route entry
-const BASE_PATH_V1 = process.env.MOBILE_BASE_PATH_V1 || "/v1/api/users";
-// app.use(BASE_PATH_V1, v1Routes);
+const BASE_PATH_V1 = process.env.BASE_PATH_V1 || "/v1/api";
+app.use(BASE_PATH_V1, routes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
