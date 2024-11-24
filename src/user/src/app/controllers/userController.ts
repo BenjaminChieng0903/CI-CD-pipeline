@@ -1,13 +1,16 @@
 import dotenv from 'dotenv';
 import {Request, Response} from 'express';
+import {StringConstant} from '../constant/string';
+import {httpStatusCodes} from '../constant/httpStatusCode'
 dotenv.config();
 
 
 const usercontroller = {
     hello: async(req: Request, res: Response)=>{
+        //status code, message need to be standardized
         res.status(200).send({
-            status: "success",
-            message: "hello!"
+            status: httpStatusCodes.OK,
+            message: StringConstant.HELLO_PING
         })
     }
 }
