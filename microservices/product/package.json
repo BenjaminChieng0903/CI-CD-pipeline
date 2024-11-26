@@ -1,0 +1,46 @@
+{
+  "name": "ci-cd-pipeline",
+  "version": "1.0.0",
+  "description": "It's a simulation of CI/CD pipeline under microservices &amp; Nginx project",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "start": "node ./dist/index.js",
+    "prod": "",
+    "ts-check": "npx tsc --noEmit",
+    "lint": "npx eslint 'src/**/*.{js,ts}'",
+    "lint:fix": "npx eslint 'src/**/*.{js,ts}' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminChieng0903/CI-CD-pipeline.git"
+  },
+  "author": "Benjamin Qian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenjaminChieng0903/CI-CD-pipeline/issues"
+  },
+  "homepage": "https://github.com/BenjaminChieng0903/CI-CD-pipeline#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.9",
+    "@eslint/js": "^9.15.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.12.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  }
+}
