@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  user_service:
+    image: user_service_image
+    build:
+      context: ../../microservices/user
+    ports:
+      - "3000:3000"
+    networks:
+      - microservices_network
+
+  product_service:
+    image: product_service_image
+    build:
+      context: ../../microservices/product
+    ports:
+      - "3001:3001"
+    networks:
+      - microservices_network
+
+  order_service:
+    image: order_service_image
+    build:
+      context: ../../microservices/order
+    ports:
+      - "3002:3002"
+    networks:
+      - microservices_network
+
+  nginx:
+    image: nginx:latest
+    build:
+      context: ../..
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8088:8088"
+    # volumes:
+    #   - ./nginx/config:/etc/nginx
+    volumes:
+      - /Users/qianjingning/CI-CD-pipeline/nginx/config:/etc/nginx
+      - /Users/qianjingning/CI-CD-pipeline/nginx/html:/usr/share/nginx/html
+
+    command: ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
+    networks:
+      - microservices_network
+    depends_on:
+      - user_service
+      - product_service
+      - order_service
+
+networks:
+  microservices_network:
+    driver: bridge
