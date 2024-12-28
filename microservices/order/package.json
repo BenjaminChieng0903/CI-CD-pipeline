@@ -10,7 +10,9 @@
     "prod": "",
     "ts-check": "npx tsc --noEmit",
     "lint": "npx eslint 'src/**/*.{js,ts}'",
-    "lint:fix": "npx eslint 'src/**/*.{js,ts}' --fix"
+    "lint:fix": "npx eslint 'src/**/*.{js,ts}' --fix",
+    "docker:build": "docker compose -f docker-compose.dev.yaml build --no-cache",
+    "docker:dev": "docker compose -f docker-compose.dev.yaml up -d"
   },
   "repository": {
     "type": "git",
